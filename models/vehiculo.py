@@ -15,7 +15,7 @@ class Vehiculo(models.Model):
     marca = fields.Char(string="Marca", required=True, help="Marca del vehículo")
     matricula = fields.Char(string="Matrícula", help="Matrícula del vehículo")
 
-    #Selection
+    
     tipo = fields.Selection(
         selection=[("coche", "Coche"), ("moto", "Moto")],
         string="Tipo", required=True, default="coche")
@@ -52,7 +52,7 @@ class Vehiculo(models.Model):
     #METODOS
     @api.depends("precio", "descuento")
     def _compute_precio_final(self):
-            # Calcula el precio final restando el descuento. Si el descuento no es válido lanza una excepción.
+            # Calcula el precio final restando el descuentoSi el descuento no es válido lanza una excepción
             for record in self:
                 if record.descuento < 0 or record.descuento > 100:
                     raise ValidationError("El descuento tiene que estar entre 0 y 100.")

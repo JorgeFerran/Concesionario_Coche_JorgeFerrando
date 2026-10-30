@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="venta_view_list" model="ir.ui.view">
+    <field name="name">concesionario.venta.list</field>
+    <field name="model">concesionario.venta</field>
+    <field name="arch" type="xml">
+      <list string="Lista de ventas">
+        <field name="name"/>
+        <field name="fecha_venta"/>
+        <field name="forma_pago"/>
+        <field name="precio_venta"/>
+        <field name="estado"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="venta_view_form" model="ir.ui.view">
+    <field name="name">concesionario.venta.form</field>
+    <field name="model">concesionario.venta</field>
+    <field name="arch" type="xml">
+      <form string="Ficha de la venta">
+        <header>
+          <!-- Barra de estado: se puede pulsar para cambiar el estado -->
+          <field name="estado" widget="statusbar" options="{'clickable': '1'}"/>
+        </header>
+        <sheet>
+          <group>
+            <group string="Datos de la venta">
+              <field name="name"/>
+              <field name="precio_venta"/>
+              <field name="forma_pago"/>
+              <field name="financiado"/>
+            </group>
+            <group string="Fechas">
+              <field name="fecha_venta"/>
+              <field name="fecha_hora"/>
+            </group>
+          </group>
+          <group string="Comentarios">
+            <field name="comentarios" nolabel="1"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="venta_view_search" model="ir.ui.view">
+    <field name="name">concesionario.venta.search</field>
+    <field name="model">concesionario.venta</field>
+    <field name="arch" type="xml">
+      <search string="Buscar ventas">
+        <field name="name"/>
+        <filter name="filtro_borrador" string="Borrador" domain="[('estado', '=', 'borrador')]"/>
+        <filter name="filtro_confirmadas" string="Confirmadas" domain="[('estado', '=', 'confirmada')]"/>
+        <filter name="filtro_canceladas" string="Canceladas" domain="[('estado', '=', 'cancelada')]"/>
+        <separator/>
+        <filter name="filtro_financiadas" string="Con financiación" domain="[('financiado', '=', True)]"/>
+        <filter name="agrupar_estado" string="Estado" context="{'group_by': 'estado'}"/>
+        <filter name="agrupar_pago" string="Forma de pago" context="{'group_by': 'forma_pago'}"/>
+      </search>
+    </field>
+  </record>
+
+  <record id="venta_action" model="ir.actions.act_window">
+    <field name="name">Ventas</field>
+    <field name="res_model">concesionario.venta</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+</odoo>
