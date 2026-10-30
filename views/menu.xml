@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Menú principal de la aplicación -->
+  <menuitem id="menu_concesionario_root" name="Concesionario" sequence="10"/>
+
+ 
+  <menuitem id="menu_vehiculo" name="Vehículos" parent="menu_concesionario_root" action="vehiculo_action" sequence="10"/>
+  <menuitem id="menu_cliente" name="Clientes" parent="menu_concesionario_root" action="cliente_action" sequence="20"/>
+  <menuitem id="menu_venta" name="Ventas" parent="menu_concesionario_root" action="venta_action" sequence="30"/>
+  <menuitem id="menu_extra" name="Extras" parent="menu_concesionario_root" action="extra_action" sequence="40"/>
+
+</odoo>

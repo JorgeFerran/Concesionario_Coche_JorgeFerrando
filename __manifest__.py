@@ -14,11 +14,16 @@
     
     'data': [
         'security/ir.model.access.csv',
-        'views/concesionario_view.xml',
+        'views/cliente_view.xml',
+        'views/vehiculo_view.xml',
+        'views/venta_view.xml',
+        'views/extra_view.xml',
+        'views/menu.xml',
+
     ],
 
     # Datos de prueba 
-    'demo': [
+    'demo   ': [
         'demo/demo.xml',
     ],
 

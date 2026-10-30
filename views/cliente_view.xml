@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="cliente_view_list" model="ir.ui.view">
+    <field name="name">concesionario.cliente.list</field>
+    <field name="model">concesionario.cliente</field>
+    <field name="arch" type="xml">
+      <list string="Lista de clientes">
+        <field name="name"/>
+        <field name="dni"/>
+        <field name="telefono"/>
+        <field name="email"/>
+        <field name="tipo_cliente"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="cliente_view_form" model="ir.ui.view">
+    <field name="name">concesionario.cliente.form</field>
+    <field name="model">concesionario.cliente</field>
+    <field name="arch" type="xml">
+      <form string="Ficha del cliente">
+        <sheet>
+          <field name="foto" widget="image" class="oe_avatar"/>
+          <group>
+            <group string="Datos personales">
+              <field name="name"/>
+              <field name="dni"/>
+              <field name="tipo_cliente"/>
+              <field name="fecha_nacimiento"/>
+              <field name="edad"/>
+            </group>
+            <group string="Contacto y registro">
+              <field name="telefono"/>
+              <field name="email"/>
+              <field name="fecha_registro"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="cliente_view_search" model="ir.ui.view">
+    <field name="name">concesionario.cliente.search</field>
+    <field name="model">concesionario.cliente</field>
+    <field name="arch" type="xml">
+      <search string="Buscar clientes">
+        <field name="name"/>
+        <field name="dni"/>
+        <field name="telefono"/>
+        <filter name="filtro_particulares" string="Particulares" domain="[('tipo_cliente', '=', 'particular')]"/>
+        <filter name="filtro_empresas" string="Empresas" domain="[('tipo_cliente', '=', 'empresa')]"/>
+        <filter name="agrupar_tipo_cliente" string="Tipo de cliente" context="{'group_by': 'tipo_cliente'}"/>
+      </search>
+    </field>
+  </record>
+
+  <record id="cliente_action" model="ir.actions.act_window">
+    <field name="name">Clientes</field>
+    <field name="res_model">concesionario.cliente</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+</odoo>

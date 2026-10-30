@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Datos de prueba: registros de ejemplo para probar la aplicación -->
+
+  <!-- EXTRAS -->
+  <record id="demo_extra_gps" model="concesionario.extra">
+    <field name="name">Navegador GPS</field>
+    <field name="codigo">EXT-001</field>
+    <field name="categoria">tecnologia</field>
+    <field name="precio">450</field>
+    <field name="descripcion">Navegador con pantalla táctil y mapas actualizados.</field>
+  </record>
+  <record id="demo_extra_clima" model="concesionario.extra">
+    <field name="name">Climatizador automático</field>
+    <field name="codigo">EXT-002</field>
+    <field name="categoria">confort</field>
+    <field name="precio">600</field>
+  </record>
+  <record id="demo_extra_camara" model="concesionario.extra">
+    <field name="name">Cámara trasera</field>
+    <field name="codigo">EXT-003</field>
+    <field name="categoria">seguridad</field>
+    <field name="precio">300</field>
+  </record>
+
+  <!-- VEHÍCULOS -->
+  <record id="demo_vehiculo_leon" model="concesionario.vehiculo">
+    <field name="name">León</field>
+    <field name="marca">Seat</field>
+    <field name="matricula">1234ABC</field>
+    <field name="tipo">coche</field>
+    <field name="combustible">gasolina</field>
+    <field name="estado">vendido</field>
+    <field name="fecha_matriculacion">2021-05-10</field>
+    <field name="precio">14500</field>
+    <field name="descuento">5</field>
+    <field name="precio_final">13775</field>
+    <field name="antiguedad">5</field>
+  </record>
+  <record id="demo_vehiculo_golf" model="concesionario.vehiculo">
+    <field name="name">Golf</field>
+    <field name="marca">Volkswagen</field>
+    <field name="matricula">5678DEF</field>
+    <field name="tipo">coche</field>
+    <field name="combustible">diesel</field>
+    <field name="estado">disponible</field>
+    <field name="fecha_matriculacion">2019-03-15</field>
+    <field name="precio">12900</field>
+    <field name="descuento">0</field>
+    <field name="precio_final">12900</field>
+    <field name="antiguedad">7</field>
+  </record>
+  <record id="demo_vehiculo_mt07" model="concesionario.vehiculo">
+    <field name="name">MT-07</field>
+    <field name="marca">Yamaha</field>
+    <field name="matricula">3456KLM</field>
+    <field name="tipo">moto</field>
+    <field name="combustible">gasolina</field>
+    <field name="estado">disponible</field>
+    <field name="fecha_matriculacion">2023-06-01</field>
+    <field name="precio">7200</field>
+    <field name="descuento">2</field>
+    <field name="precio_final">7056</field>
+    <field name="antiguedad">3</field>
+  </record>
+  <record id="demo_vehiculo_vespa" model="concesionario.vehiculo">
+    <field name="name">Primavera 125</field>
+    <field name="marca">Vespa</field>
+    <field name="matricula">7890NPQ</field>
+    <field name="tipo">moto</field>
+    <field name="combustible">gasolina</field>
+    <field name="estado">reservado</field>
+    <field name="fecha_matriculacion">2026-03-05</field>
+    <field name="precio">4500</field>
+    <field name="descuento">0</field>
+    <field name="precio_final">4500</field>
+    <field name="antiguedad">0</field>
+  </record>
+
+  <!-- CLIENTES -->
+  <record id="demo_cliente_ana" model="concesionario.cliente">
+    <field name="name">Ana García López</field>
+    <field name="dni">12345678A</field>
+    <field name="telefono">600111222</field>
+    <field name="email">ana.garcia@ejemplo.com</field>
+    <field name="tipo_cliente">particular</field>
+    <field name="fecha_nacimiento">1990-04-12</field>
+    <field name="edad">36</field>
+  </record>
+  <record id="demo_cliente_luis" model="concesionario.cliente">
+    <field name="name">Luis Martínez Ruiz</field>
+    <field name="dni">87654321B</field>
+    <field name="telefono">611333444</field>
+    <field name="email">luis.martinez@ejemplo.com</field>
+    <field name="tipo_cliente">particular</field>
+    <field name="fecha_nacimiento">1985-11-30</field>
+    <field name="edad">40</field>
+  </record>
+  <record id="demo_cliente_empresa" model="concesionario.cliente">
+    <field name="name">Transportes Rápidos S.L.</field>
+    <field name="dni">B50123456</field>
+    <field name="telefono">976555666</field>
+    <field name="email">info@transportesrapidos.com</field>
+    <field name="tipo_cliente">empresa</field>
+  </record>
+
+  <!-- VENTAS -->
+  <record id="demo_venta_1" model="concesionario.venta">
+    <field name="name">V-001</field>
+    <field name="fecha_venta">2026-09-15</field>
+    <field name="precio_venta">13775</field>
+    <field name="forma_pago">contado</field>
+    <field name="estado">confirmada</field>
+    <field name="comentarios">Venta con entrega inmediata.</field>
+  </record>
+  <record id="demo_venta_2" model="concesionario.venta">
+    <field name="name">V-002</field>
+    <field name="fecha_venta">2026-10-20</field>
+    <field name="precio_venta">12500</field>
+    <field name="forma_pago">financiado</field>
+    <field name="financiado" eval="True"/>
+    <field name="estado">borrador</field>
+  </record>
+
+</odoo>
